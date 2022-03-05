@@ -1,6 +1,8 @@
 package com.perscholas.cafe;
 
-public class Product {
+import java.util.Scanner;
+
+public abstract class Product {
     private String name;
     private double price;
     private String description;
@@ -49,9 +51,26 @@ public class Product {
         this.quantity = quantity;
     }
 
-    public double calculateProductTotal() {
+    abstract double calculateProductTotal() ;
 
-        return price * quantity;
+    public boolean gettinginput() {
 
+        boolean yn;
+        while (true) {
+            System.out.println("y/n");
+            Scanner sc = new Scanner(System.in);
+            String answer = sc.nextLine();
+            if (answer.equals("y")) {
+                yn = true;
+                break;
+            } else if (answer.equals("n")) {
+                yn = false;
+                break;
+            } else
+                System.out.println("Sorry, I didn't catch that. Please answer y/n");
+        }
+        return yn;
     }
+
+
 }
