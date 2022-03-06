@@ -9,7 +9,7 @@ public class  Espresso extends Product{
         this.peppermint =false;
         this.whippedCream=false;}
 
-    public boolean isPeppermint() {
+    public boolean isPeppermint() {1
         return peppermint;
     }
 
