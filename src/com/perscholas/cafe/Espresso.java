@@ -9,7 +9,7 @@ public class  Espresso extends Product{
         this.peppermint =false;
         this.whippedCream=false;}
 
-    public boolean isPeppermint() {1
+    public boolean isPeppermint() {
         return peppermint;
     }
 
@@ -25,6 +25,9 @@ public class  Espresso extends Product{
         this.whippedCream = whippedCream;
     }
 
+    public Espresso(String name, double price, String description) {
+        super(name,price,description);
+    }
     public Espresso(String name, double price, String description, boolean peppermint , boolean whippedCream) {
         super(name,price,description);
         this.peppermint =peppermint ;
@@ -43,6 +46,20 @@ public class  Espresso extends Product{
             price = price+1;
         return  getQuantity()*price;
 
+    }
+
+    @Override
+    void AddOptions() {
+        System.out.println("Do you want to add PepperMint: ");
+        this.setPeppermint(this.gettinginput());
+        System.out.println("Do you want to add WhippedCream: ");
+        this.setWhippedCream(this.gettinginput());
+    }
+
+    @Override
+    void PrintOptions() {
+        System.out.print("Peppermint:" + isPeppermint()+"\t");
+        System.out.print("WhippedCream:" + isWhippedCream()+"\n");
     }
 
 

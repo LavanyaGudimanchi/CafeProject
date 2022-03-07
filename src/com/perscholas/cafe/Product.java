@@ -51,7 +51,7 @@ public abstract class Product {
         this.quantity = quantity;
     }
 
-    abstract double calculateProductTotal() ;
+    abstract double calculateProductTotal();
 
     public boolean gettinginput() {
 
@@ -72,5 +72,19 @@ public abstract class Product {
         return yn;
     }
 
+    public void DisplayProdcutInfo() {
+        System.out.println("Name:" + this.getName() + "\t" + "Price:" + this.getPrice() + "\t" + "Quantity:" + this.getQuantity()+ "\t" + "Sub Total: " + this.calculateProductTotal());
+
+    }
+
+    public void CaptureQuantity() {
+        System.out.println("Enter  Quantity");
+        Scanner input1 = new Scanner(System.in);
+        this.setQuantity(input1.nextInt());
+    }
+
+    abstract void AddOptions();
+
+    abstract void PrintOptions();
 
 }
